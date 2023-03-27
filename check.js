@@ -45,6 +45,7 @@ const req = http.request("https://ws.synbird.com/v6/pro/company/getSlotsFor", {
   })
     .on("end", function() {
       const json = JSON.parse(data);
+      console.log(json.timeSlots)
       if (json.timeSlots.length !== 0) {
         process.exit(-1);
       }
